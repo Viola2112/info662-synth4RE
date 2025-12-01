@@ -31,7 +31,7 @@ bert-gt-env\Scripts\activate  # Windows
 ```
 ### Step 2: clone notebook and data 
 ```bash
-git clone https://github.com/Viola2112/info662-synth4RE/tree/main .
+git clone https://github.com/Viola2112/info662-synth4RE .
 ```
 
 # BERT_GT Model Run Set-up 
