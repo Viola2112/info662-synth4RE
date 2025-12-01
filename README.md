@@ -13,6 +13,8 @@ and submits a new job to the supercomputer.
 
 ---
 # BERT_GT Model Environment Installation 
+ **Reference: Claude.Ai Chatlog**
+- https://claude.ai/share/0111ec41-3c6b-4ea2-8928-e80da01faf9d
 
 ### Step 1: Set Up Python Environment
 
