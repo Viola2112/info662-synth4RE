@@ -1,7 +1,7 @@
 # BERT-GT Notebook - Complete Usage Manual
 
 **Version:** 1.2 FINAL  
-**Last Updated:** December 2024  
+**Last Updated:** December 2025  
 **Model:** BERT-GT (BERT with Graph Transformer)  
 **Dataset:** BioRED (Biomedical Relation Extraction Dataset)  
 **PyTorch:** 2.6.0+cu124  
@@ -1474,18 +1474,11 @@ torch.save({
 
 ---
 
-## 📞 Support and Resources
-
-### Documentation
-
-**Included Files:**
-- `README_BERT_GT_PACKAGE.md` - Package overview
-- `BERT_GT_QUICK_START.md` - Quick start guide
-- `BERT_GT_TROUBLESHOOTING.md` - Common issues
-- `BERT_GT_Resume_Training_Guide.md` - Checkpoint guide
-- This manual - Complete usage guide
 
 ### References
+
+**Claude.Ai Chatlog:**
+- https://claude.ai/share/0111ec41-3c6b-4ea2-8928-e80da01faf9d
 
 **BERT-GT Paper:**
 - Lai et al. (2021) - "Biomedical Relation Extraction with Graph Transformer"
@@ -1503,6 +1496,7 @@ torch.save({
 
 **Hugging Face:**
 - BioBERT model: dmis-lab/biobert-v1.1
+- 
 
 ---
 
