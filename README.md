@@ -12,10 +12,31 @@ using the "sacct" command from command line, since this creates
 and submits a new job to the supercomputer.
 
 ---
+# BERT_GT Model Environment Installation 
 
-# BERT_GT Model Set-up 
+### Step 1: Set Up Python Environment
 
-For more details, read BERT_GT_NOTEBOOK_USAGE_MANUAL_v12_FINAL.md
+**Option A: Using Conda (Recommended)**
+```bash
+conda create -n bert-gt python=3.9
+conda activate bert-gt
+```
+
+**Option B: Using venv**
+```bash
+python -m venv bert-gt-env
+source bert-gt-env/bin/activate  # Linux/Mac
+# or
+bert-gt-env\Scripts\activate  # Windows
+```
+### Step 2: clone notebook and data 
+```bash
+git clone https://github.com/Viola2112/info662-synth4RE/tree/main .
+```
+
+# BERT_GT Model Run Set-up 
+
+For more details, read [BERT_GT_NOTEBOOK_USAGE_MANUAL_v12_FINAL.md] (https://github.com/Viola2112/info662-synth4RE/blob/main/BERT_GT_NOTEBOOK_USAGE_MANUAL_v12_FINAL.md)
 
 ## Quick Start
 
