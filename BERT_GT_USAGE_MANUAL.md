@@ -1,9 +1,10 @@
 # BERT-GT for BioRED - Complete Usage Manual
 
 **Version:** 1.0  
-**Last Updated:** November 2024  
+**Last Updated:** December, 2025  
 **Model:** BERT-GT (BERT with Graph Transformer)  
 **Dataset:** BioRED (Biomedical Relation Extraction Dataset)
+**Claude Chatlog Reference:** https://claude.ai/share/0111ec41-3c6b-4ea2-8928-e80da01faf9d
 
 ---
 
@@ -1219,6 +1220,7 @@ set_seed(42)
 - **PyTorch**: https://pytorch.org/docs/
 - **Transformers**: https://huggingface.co/docs/transformers/
 - **BioBERT Models**: https://huggingface.co/dmis-lab
+- **Claude.Ai Chatlog**: https://claude.ai/share/0111ec41-3c6b-4ea2-8928-e80da01faf9d
 
 ---
 
@@ -1343,4 +1345,4 @@ For additional support:
 - Transformers docs: https://huggingface.co/docs/transformers/
 
 **Version**: 1.0  
-**Last Updated**: November 2024
+**Last Updated**: December 2025
