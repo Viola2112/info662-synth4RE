@@ -1,10 +1,9 @@
 # BERT-GT for BioRED - Complete Usage Manual
 
-**Version:** 1.0  
+**Version:** 1.2  
 **Last Updated:** December, 2025  
 **Model:** BERT-GT (BERT with Graph Transformer)  
 **Dataset:** BioRED (Biomedical Relation Extraction Dataset)
-**Claude Chatlog Reference:** https://claude.ai/share/0111ec41-3c6b-4ea2-8928-e80da01faf9d
 
 ---
 
@@ -74,7 +73,7 @@ BERT-GT (BERT with Graph Transformer) is a state-of-the-art model for biomedical
 |-----------|------|------------|---------------|--------|
 | CPU Only | - | 2 | ~48 hours | ⚠️ Very Slow |
 | GTX 1080 Ti | 11 GB | 4 | ~16 hours | ⚠️ Slow |
-| RTX 3080 | 10-12 GB | 4-8 | ~8-10 hours | ✓ Good |
+| RTX 3080 | 10-12 GB | 4-8 | ~30-40 hours | ✓ Good |
 | RTX 3090 | 24 GB | 16 | ~4-6 hours | ✓ Excellent |
 | A100 | 40/80 GB | 32 | ~2-3 hours | ✓ Optimal |
 | T4 | 16 GB | 8 | ~8 hours | ✓ Good |
@@ -1343,5 +1342,5 @@ For additional support:
 - BioRED documentation: https://ftp.ncbi.nlm.nih.gov/pub/lu/BioRED/
 - Transformers docs: https://huggingface.co/docs/transformers/
 
-**Version**: 1.0  
+**Version**: 1.2  
 **Last Updated**: December 2025
