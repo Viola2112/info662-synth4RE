@@ -221,20 +221,8 @@ DROPOUT = 0.1
 ### 4.3 Run All Cells
 
 1. Click: **Cell → Run All**
-2. Wait ~20 minutes (testing mode) or ~8 hours (full training)
+2. Wait ~20-30 minutes (testing mode) or ~30+ hours (full training with 1 GPU)
 3. Check results in final cells
-
-### 4.4 Check Results
-
-After training completes:
-
-```
-TEST SET RESULTS
-============================================================
-Test F1 Score: 0.6234
-Test Accuracy: 0.7156
-============================================================
-```
 
 ---
 
@@ -242,52 +230,55 @@ Test Accuracy: 0.7156
 
 ### 5.1 Understanding the Notebook Structure
 
-The notebook is organized into 18 cells:
+The notebook is organized into 22 cells:
 
-#### Setup Cells (1-7)
-1. **Cell 1**: Package installation
-2. **Cell 2**: Imports and device setup
-3. **Cell 3**: GraphTransformerLayer definition
-4. **Cell 4**: BERTGTModel definition
-5. **Cell 5**: Data converter definition
-6. **Cell 6**: Dataset and DataLoader
-7. **Cell 7**: Training functions
+#### Setup Cells (1-10)
+1. **Cell 1**: Ensure Pytorch system dependencies
+2. **Cell 2**: Package installation
+3. **Cell 3**: Verify Device Name 
+4. **Cells 4 & 5**: Imports and device setup
+5. **Cell 6**: GraphTransformerLayer definition
+6. **Cell 7**: BERTGTModel definition
+7. **Cell 8**: Data converter definition
+8. **Cell 9**: Dataset and DataLoader
+9. **Cell 10**: Training and Evaluation Functions with Checkpoint Support
 
-#### Data Preparation (8-12)
-8. **Cell 8**: Configuration ⭐ **YOU EDIT THIS**
-9. **Cell 9**: Load BioRED documents
-10. **Cell 10**: Initialize tokenizer
-11. **Cell 11**: Convert to BERT-GT format
-12. **Cell 12**: Create DataLoaders
+#### Data Preparation (11-16)
+8. **Cell 11**: Configuration ⭐ **YOU EDIT THIS**
+9. **Cell 12**: Load BioRED documents
+10. **Cell 13**: Diagnostic: Check Documents Before Conversion
+11. **Cell 14**: Initialize tokenizer
+12. **Cell 15**: Convert to BERT-GT format
+13. **Cell 16**: Create Datasets and DataLoaders
 
-#### Training & Evaluation (13-18)
-13. **Cell 13**: Initialize model
-14. **Cell 14**: Train model ⭐ **MAIN TRAINING**
-15. **Cell 15**: Evaluate on test set
-16. **Cell 16**: Visualize training progress
-17. **Cell 17**: Save statistics
-18. **Cell 18**: Print summary
+#### Training & Evaluation (17-22)
+13. **Cell 17**: Initialize model
+14. **Cell 18**: Train model ⭐ **MAIN TRAINING**
+15. **Cell 19**: Evaluate on test set
+16. **Cell 20**: Visualize training progress
+17. **Cell 21**: Save statistics
+18. **Cell 22**: Print summary
 
 ### 5.2 Cell-by-Cell Execution Guide
 
-#### Phase 1: Setup (Cells 1-7)
+#### Phase 1: Setup (Cells 1-10)
 
 **Run these cells in order without modification.**
 
 ```python
-# Cell 1: Install packages (run once)
+# Cells 1-3: Install packages (run once)
 !pip install transformers torch scikit-learn tqdm
 
-# Cell 2: Imports
+# Cells 4 & 5: Imports
 import torch
 import torch.nn as nn
 # ... (rest of imports)
 
-# Cell 3-7: Model and function definitions
+# Cell 6-10: Model and function definitions
 # Just run these - no changes needed
 ```
 
-#### Phase 2: Configuration (Cell 8)
+#### Phase 2: Configuration (Cell 11)
 
 **⭐ CRITICAL: Edit this cell before running!**
 
