@@ -86,8 +86,10 @@ BERT-GT (BERT with Graph Transformer) is a state-of-the-art model for biomedical
 python --version  # Should be 3.8 or higher
 
 # Required packages
-torch>=1.10.0
-transformers>=4.20.0
+torch==2.6.0         # PyTorch with CUDA 12.4
+torchvision==0.21.0
+torchaudio==2.6.0
+transformers>=4.30.0
 scikit-learn>=1.0.0
 numpy>=1.21.0
 pandas>=1.3.0
@@ -115,20 +117,16 @@ bert-gt-env\Scripts\activate  # Windows
 
 ### Step 2: Install PyTorch
 
-**For CUDA 11.8 (most common):**
+**For CUDA 12.4 (most common):**
 ```bash
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
-```
-
-**For CUDA 12.1:**
-```bash
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+pip install torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/cu124
 ```
 
 **For CPU only:**
 ```bash
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+pip install torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/cpu
 ```
+Note: This manual uses PyTorch 2.6.0 with CUDA 12.4. If you have a different CUDA version, adjust the installation URL accordingly.
 
 ### Step 3: Install Other Dependencies
 
@@ -151,9 +149,10 @@ if torch.cuda.is_available():
 
 Expected output:
 ```
-PyTorch: 2.0.0
-Transformers: 4.30.0
+PyTorch version: 2.6.0+cu124
+Transformers: 4.30.0+
 CUDA available: True
+CUDA version in PyTorch: 12.4
 GPU: NVIDIA GeForce RTX 3080
 ```
 
