@@ -3,3 +3,7 @@ Qwen3-8B/
 .ipynb_checkpoints/
 data/.ipynb_checkpoints/
 gen_synth_*
+train_comb_*
+data/CombinedTrain.PubTator
+train_combined.sh
+.gitignore
