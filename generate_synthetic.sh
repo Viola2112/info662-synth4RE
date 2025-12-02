@@ -14,10 +14,10 @@
 module load CUDA/12.6.0
 module load Anaconda3
 
-conda activate generation_vijay2
+conda activate bert-gt
 
 # some preparation
-python -m ipykernel install --user --name generation_vijay2 --display-name "Python (generation_vijay2)"
+python -m ipykernel install --user --name bert-gt --display-name "Python (bert-gt)"
 jupyter nbconvert --to notebook --inplace --ClearMetadataPreprocessor.enabled=True Generate_Synthetic.ipynb
 
 # run the synthetic generation from command line

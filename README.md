@@ -1,6 +1,16 @@
 # info662-synth4RE
 Group project for INFO 662
 
+## Step 0: Install environment for downloader and synthetic data generation
+
+Create the environment for downloading the Qwen3-8B model and generating
+synthetic data as follows:
+```bash
+conda create -n bert-gt python=3.9 pip
+conda activate bert-gt
+pip install -r requirements.txt
+```
+
 ## Step 1: Download Qwen3-8B
 Create a folder Qwen3-8B/ in the working directory on Cheaha.
 Run the following command to perform the download:

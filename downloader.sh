@@ -14,7 +14,6 @@
 module load CUDA/12.6.0
 module load Anaconda3
 
-conda activate generation_vijay2
-# might need to add hf token, we'll see
+conda activate bert-gt
 
 python downloader.py
