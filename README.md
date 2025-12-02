@@ -56,7 +56,7 @@ For more details, read [BERT_GT_NOTEBOOK_USAGE_MANUAL_v12_FINAL.md] (https://git
 
 1. **Open Notebook**
    ```bash
-   jupyter notebook BERT_GT_Notebook.ipynb
+   jupyter notebook BERT_GT_Notebook_v3.ipynb
    ```
 
 2. **Update File Paths (Cell 19)**
