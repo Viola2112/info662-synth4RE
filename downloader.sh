@@ -14,6 +14,6 @@
 module load CUDA/12.6.0
 module load Anaconda3
 
-conda activate bert-gt
+conda activate synth-gen
 
 python downloader.py

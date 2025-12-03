@@ -1,13 +1,15 @@
 # info662-synth4RE
 Group project for INFO 662
 
+# Synthetic data generation
+
 ## Step 0: Install environment for downloader and synthetic data generation
 
 Create the environment for downloading the Qwen3-8B model and generating
 synthetic data as follows:
 ```bash
-conda create -n bert-gt python=3.9 pip
-conda activate bert-gt
+conda create -n synth-gen python=3.9 pip
+conda activate synth-gen
 pip install -r requirements.txt
 ```
 
@@ -20,6 +22,16 @@ sbatch downloader.sh
 The download may take a few minutes. You can check on progress
 using the "sacct" command from command line, since this creates
 and submits a new job to the supercomputer.
+
+## Step 2: Generate synthetic data
+Run the following command to perform the generation:
+```
+sbatch generate_synthetic.sh
+```
+This should produce SynthTrain.PubTator, the synthetic data in the 
+PubTator format, and synth_faithfullness.csv, which documents 
+how well the LLM follows instructions about number of mentions
+to generate, in the data/ directory  
 
 ---
 # BERT_GT Model Environment Installation 
