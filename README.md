@@ -8,7 +8,7 @@ Group project for INFO 662
 Create the environment for downloading the Qwen3-8B model and generating
 synthetic data as follows:
 ```bash
-conda create -n synth-gen python=3.9 pip
+conda create -n synth-gen python=3.10 pip
 conda activate synth-gen
 pip install -r requirements.txt
 ```
