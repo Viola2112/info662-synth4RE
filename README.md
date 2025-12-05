@@ -1,3 +1,5 @@
+![Project Poster](Grooms_Cron_Crivelli_poster.png)
+
 # info662-synth4RE
 Group project for INFO 662
 
