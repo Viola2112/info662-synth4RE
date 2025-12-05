@@ -232,3 +232,68 @@ training_stats = train_bert_gt_with_checkpoints(
    ├─ Run Cell 33 (save stats)
    └─ Run Cells 35-36 (detailed metrics)
 ```
+
+
+
+# External dataset (Variome): BioC to PubTator Conversion 
+
+***Generated with assistance from Claude.AI
+
+## Overview
+
+This converts the Variome dataset from BioC XML format to PubTator format 
+
+## Dataset
+
+- **Source**: Variome corpus (BioC XML format)
+
+Available at: github.com/hu-ner/hunflair-corpora/tree/main
+
+## Files
+
+| File | Description |
+|------|-------------|
+| `bioc_to_pubtator.py` | Conversion script from BioC XML to PubTator format |
+| `variome_bioc.xml` | Original Variome dataset in BioC format |
+| `variome_output.pubtator` | Converted dataset in PubTator format |
+
+## Installation
+
+```bash
+pip install torch transformers tqdm scikit-learn pandas
+```
+
+## Usage
+
+### 1. Convert BioC XML to PubTator Format
+
+```python
+from bioc_to_pubtator import parse_bioc_to_pubtator
+
+parse_bioc_to_pubtator('variome_bioc.xml', 'variome_output.pubtator')
+```
+
+Or from command line:
+```bash
+python bioc_to_pubtator.py variome_bioc.xml variome_output.pubtator
+```
+
+### 2. PubTator Output Format
+
+```
+PMID|t|Title text
+PMID|a|Abstract text
+PMID    start    end    text    type    annotation_id
+PMID    relation_type    arg1_id    arg2_id
+```
+
+Example:
+```
+02435117|t|Conclusion
+02435117|a|By analyzing a large series of tumors from Swedish patients...
+02435117	251	257	CTNNB1	gene	T1
+02435117	213	224	parathyroid	body-part	T4
+02435117	225	231	tumors	disease	T5
+02435117	Association	T4	T5
+```
+
