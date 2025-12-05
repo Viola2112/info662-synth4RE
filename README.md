@@ -237,7 +237,8 @@ training_stats = train_bert_gt_with_checkpoints(
 
 # External dataset (Variome): BioC to PubTator Conversion 
 
-***Generated with assistance from Claude.AI
+***Documentation and code for the rest of the project generated with assistance from Claude.AI
+Claude.AI log: https://claude.ai/share/04289a0a-1f65-4f33-97e3-61af80e1865e
 
 ## Overview
 
