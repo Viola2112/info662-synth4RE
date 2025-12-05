@@ -8,10 +8,12 @@ Group project for INFO 662
 Create the environment for downloading the Qwen3-8B model and generating
 synthetic data as follows:
 ```bash
-conda create -n synth-gen python=3.10 pip
+conda create -n synth-gen python=3.11 pip
 conda activate synth-gen
 pip install -r requirements.txt
 ```
+Note that the conda environemnt for synthetic generation is different than the
+conda environment for training the BERT_GT model.
 
 ## Step 1: Download Qwen3-8B
 Create a folder Qwen3-8B/ in the working directory on Cheaha.
@@ -24,14 +26,11 @@ using the "sacct" command from command line, since this creates
 and submits a new job to the supercomputer.
 
 ## Step 2: Generate synthetic data
-Run the following command to perform the generation:
-```
-sbatch generate_synthetic.sh
-```
-This should produce SynthTrain.PubTator, the synthetic data in the 
-PubTator format, and synth_faithfullness.csv, which documents 
-how well the LLM follows instructions about number of mentions
-to generate, in the data/ directory  
+Open the Jupyter Notebook "Generate_Synthetic.ipynb" and make sure the kernel
+is assigned to "synth-gen". Run all cells and make sure to keep the 
+connection running for about 12 hours. This should produce SynthTrain.PubTator, 
+the synthetic data in the PubTator format, and synth_faithfullness.csv, which documents
+how well the LLM follows instructions about number of mentions to generate, in the data/ directory.
 
 ---
 # BERT_GT Model Environment Installation 

@@ -17,7 +17,7 @@ module load Anaconda3
 conda activate synth-gen
 
 # some preparation
-python -m ipykernel install --user --name bert-gt --display-name "Python (bert-gt)"
+python -m ipykernel install --user --name synth-gen --display-name "Python (synth-gen)"
 jupyter nbconvert --to notebook --inplace --ClearMetadataPreprocessor.enabled=True Generate_Synthetic.ipynb
 
 # run the synthetic generation from command line
