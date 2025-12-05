@@ -297,3 +297,94 @@ Example:
 02435117	Association	T4	T5
 ```
 
+
+
+
+## Running the Model on Variome (Test Evaluation Only)
+
+This section describes how to evaluate a pre-trained BERT-GT model on the Variome dataset as a test case. These steps are designed for **CPU-only** execution given the small dataset size.
+
+Note that key files were kept in a folder, VARIOME/
+
+Jupyter notebook for this task is VARIOME_BERT_GT_Notebook
+
+### Prerequisites
+```bash
+pip install torch transformers tqdm scikit-learn pandas
+```
+
+### Key Steps
+
+#### 1. Set Device for CPU
+```python
+import torch
+device = torch.device('cpu')
+```
+
+#### 2. Configuration
+```python
+TESTING = True
+MAX_DOCS = 1000  # Load all 392 documents
+BATCH_SIZE = 4
+MODEL_NAME = 'dmis-lab/biobert-v1.1'
+MAX_LENGTH = 512
+
+RELATION_TYPES = {
+    'Positive_Correlation': 0,
+    'Negative_Correlation': 1,
+    'Association': 2,
+    'No_Relation': 3
+}
+```
+
+#### 3. Load and Convert Data
+```python
+# Load PubTator file
+loader = BioREDDataLoader('VARIOME/variome_output.pubtator', max_documents=MAX_DOCS)
+docs = loader.load_data()
+
+# Convert to BERT-GT format
+converter = BioREDToBERTGTConverter(tokenizer, max_seq_length=MAX_LENGTH)
+examples = converter.convert_documents(docs)
+
+# Create dataset and dataloader
+dataset = BERTGTDataset(examples, RELATION_TYPES)
+test_loader = DataLoader(dataset, batch_size=BATCH_SIZE, collate_fn=bert_gt_collate_fn)
+```
+
+#### 4. Load Pre-trained Model (CPU)
+```python
+# Critical: use map_location=device when loading a model trained on GPU
+model.load_state_dict(torch.load('best_combo_bert_gt_model.pt', map_location=device))
+```
+
+#### 5. Evaluate
+```python
+test_metrics = evaluate_bert_gt(model, test_loader, device, return_predictions=True)
+```
+
+### Key Modifications from Original BioRED Pipeline
+
+| Issue | Solution |
+|-------|----------|
+| Model trained on GPU, running on CPU | Add `map_location=device` to `torch.load()` |
+| Collate function not applied | Explicitly pass `collate_fn=bert_gt_collate_fn` to DataLoader |
+| String labels not converted | Modified collate function to convert string labels to integers using `RELATION_TYPES` |
+| `input_ids` as lists not tensors | Modified collate function to convert lists to tensors |
+| BioC uses `relatedTo` | Conversion script maps `relatedTo` → `Association` |
+
+### Notes
+
+- The full Jupyter notebook is available in this repository (may contain debugging steps)
+- Evaluation on CPU takes longer but works for this small dataset
+- Only `Association` relations are relevant for gene-disease evaluation; `has` relations were ignored
+
+### Imports Required
+```python
+import os
+import torch
+import pandas as pd
+from torch.utils.data import Dataset, DataLoader
+from transformers import AutoTokenizer, AutoModel
+from tqdm import tqdm
+from sklearn.metrics import classification_report
